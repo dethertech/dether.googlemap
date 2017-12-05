@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ReactLoading from 'react-loading';
 
 import actions from '../../actions';
+import Map from './Map';
 
 /**
  * Home component
  * @extends Component
  */
 class Home extends Component {
+  state = {
+    isMarkerShown: false,
+    loading: true,
+  }
+
   /**
    * Load all tellers
    * @return {[type]} [description]
@@ -20,13 +27,35 @@ class Home extends Component {
   }
 
   /**
+   * Display tellers
+   * @param  {[type]} newProps New Props
+   */
+  componentWillReceiveProps = (newProps) => {
+    if (newProps.tellers !== this.props.tellers) {
+      this.setState({ isMarkerShown: true, loading: false });
+    }
+  }
+
+  handleMarkerClick = () => {
+    this.delayedShowMarker();
+  }
+
+  /**
    * Home component
    * @return {component} return home component
    */
-  render = () => {
-    console.log(this.props.tellers);
+  render() {
+    const { isMarkerShown, loading } = this.state;
+    const { tellers } = this.props;
+
+    if (loading) return <ReactLoading type="spin" color="#d93965" height="150px" width="150px" />;
+
     return (
-      <span>Dether google map</span>
+      <Map
+        isMarkerShown={isMarkerShown}
+        onMarkerClick={this.handleMarkerClick}
+        tellers={tellers}
+      />
     );
   }
 }
