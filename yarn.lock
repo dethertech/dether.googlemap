@@ -5815,6 +5815,10 @@ react-google-maps@^9.4.1:
     scriptjs "^2.5.8"
     warning "^3.0.0"
 
+react-loading@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-loading/-/react-loading-1.0.2.tgz#227ae6b5fef2275f26bcad501f52a1ba312d6804"
+
 react-redux@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"

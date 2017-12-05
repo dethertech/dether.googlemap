@@ -3,17 +3,13 @@ import { Marker } from 'react-google-maps';
 import PropTypes from 'prop-types';
 
 const MapMarker = ({ tellers }) => (
-  <div>
-    {
-      tellers.map(({ lat, lng, ethAddress }) => (
-        <Marker
-          position={{ lat, lng }}
-          onClick={() => {}}
-          key={ethAddress}
-        />
-      ))
-    }
-  </div>
+  tellers.map(({ lat, lng, ethAddress }) => (
+    <Marker
+      position={{ lat, lng }}
+      onClick={() => {}}
+      key={ethAddress}
+    />
+  ))
 );
 
 MapMarker.propTypes = {

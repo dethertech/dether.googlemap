@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ReactLoading from 'react-loading';
 
 import actions from '../../actions';
 import Map from './Map';
@@ -13,6 +14,7 @@ import Map from './Map';
 class Home extends Component {
   state = {
     isMarkerShown: false,
+    loading: true,
   }
 
   /**
@@ -24,18 +26,17 @@ class Home extends Component {
     tellers.getTellers();
   }
 
-  componentDidMount() {
-    this.delayedShowMarker();
-  }
-
-  delayedShowMarker = () => {
-    setTimeout(() => {
-      this.setState({ isMarkerShown: true });
-    }, 3000);
+  /**
+   * Display tellers
+   * @param  {[type]} newProps New Props
+   */
+  componentWillReceiveProps = (newProps) => {
+    if (newProps.tellers !== this.props.tellers) {
+      this.setState({ isMarkerShown: true, loading: false });
+    }
   }
 
   handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false });
     this.delayedShowMarker();
   }
 
@@ -44,8 +45,10 @@ class Home extends Component {
    * @return {component} return home component
    */
   render() {
-    const { isMarkerShown } = this.state;
+    const { isMarkerShown, loading } = this.state;
     const { tellers } = this.props;
+
+    if (loading) return <ReactLoading type="spin" color="#d93965" height="150px" width="150px" />;
 
     return (
       <Map
