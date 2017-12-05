@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | dether.googlemap</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#actions">actions</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getTellers">getTellers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-set">set</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TELLERS_SET">TELLERS_SET</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#bootstrap">bootstrap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateStore">generateStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-register">register</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-unregister">unregister</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-config">config</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#reducers">reducers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tellers">tellers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-detherShop">detherShop</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="dether-google-map">Dether Google Map</h1><p><a href="https://github.com/dethertech/dether.googlemap/issues"><img src="https://img.shields.io/github/issues/dethertech/dether.googlemap.svg" alt="GitHub issues"></a>
+<a href="https://github.com/dethertech/dether.googlemap/stargazers"><img src="https://img.shields.io/github/stars/dethertech/dether.googlemap.svg" alt="GitHub stars"></a></p>
+<p>DetherGoogleMap is Javascript implementation based on <a href="https://github.com/dethertech/dether.js">DetherJS</a></p>
+<p>It enables to load all the dether tellers and show them on a Google Map</p>
+<h2 id="table-of-contents">Table of Contents</h2><ul>
+<li><a href="#requirement">Requirement</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#doc">Docs</a></li>
+<li><a href="#Usage">Usage</a></li>
+<li><a href="#test">Test</a></li>
+<li><a href="#build">Build</a></li>
+<li><a href="#build-doc">Build doc</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#bugs">Bugs</a></li>
+<li><a href="#donation">Donation</a></li>
+</ul>
+<h2 id="requirement">Requirement</h2><p>You can add Google API key, you will have to paste it on .env</p>
+<pre><code><code class="source-code prettyprint">REACT_APP_NETWORK=kovan
+REACT_APP_GOOGLE_API=https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places</code>
+</code></pre><h2 id="install">Install</h2><pre><code><code class="source-code prettyprint">git clone https://github.com/dethertech/dether.googlemap.git
+cd dether.googlemap
+yarn</code>
+</code></pre><h2 id="docs">Docs</h2><p>Extensive documentation of all the methods can be found on the <a href="https://dethertech.github.io/dether.googlemap">API documentation</a></p>
+<h2 id="usage">Usage</h2><pre><code><code class="source-code prettyprint">yarn start</code>
+</code></pre><h2 id="test">Test</h2><pre><code><code class="source-code prettyprint">yarn test</code>
+</code></pre><h2 id="build">Build</h2><pre><code><code class="source-code prettyprint">yarn build</code>
+</code></pre><h2 id="build-doc">Build doc</h2><pre><code><code class="source-code prettyprint">yarn run esdoc
+yarn run publish:esdoc</code>
+</code></pre><h2 id="dependencies">Dependencies</h2><ul>
+<li><a href="https://github.com/dethertech/dether.js">detherjs</a></li>
+<li><a href="https://github.com/facebook/prop-types">prop-types</a></li>
+<li><a href="https://github.com/facebook/react">react</a></li>
+<li><a href="https://github.com/facebook/react">react-dom</a></li>
+<li><a href="https://github.com/tomchentw/react-google-maps">react-google-maps</a></li>
+<li><a href="https://github.com/fakiolinho/react-loading">react-loading</a></li>
+<li><a href="https://github.com/reactjs/react-redux">react-redux</a></li>
+<li><a href="https://github.com/ReactTraining/react-router">react-router-dom</a></li>
+<li><a href="https://github.com/facebookincubator/create-react-app">react-scripts</a></li>
+<li><a href="https://github.com/acdlite/recompose">recompose</a></li>
+<li><a href="https://github.com/reactjs/redux">redux</a></li>
+<li><a href="https://github.com/gaearon/redux-thunk">redux-thunk</a></li>
+</ul>
+<h2 id="bugs">Bugs</h2><p>When you find issues, please report them:</p>
+<ul>
+<li>web: <a href="https://github.com/dethertech/dether.googlemap/issues">https://github.com/dethertech/dether.googlemap/issues</a></li>
+</ul>
+<h2 id="donation">Donation</h2><ul>
+<li><a href="https://ethereum.org/donate">Ethereum Foundation</a></li>
+<li><a href="https://etherscan.io/address/0x71c7656ec7ab88b098defb751b7401b5f6d8976f">Etherscan</a></li>
+<li><a href="https://etherscan.io/address/0x7cB57B5A97eAbe94205C07890BE4c1aD31E486A8">MyEtherWallet</a></li>
+<li><a href="https://etherscan.io/address/0x0074709077B8AE5a245E4ED161C971Dc4c3C8E2B">CoinMarketCap</a></li>
+</ul>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
